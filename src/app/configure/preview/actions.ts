@@ -70,12 +70,17 @@ export const createCheckoutSession = async ({
     cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/configure/preview?id=${configuration.id}`,
     payment_method_types: ['card'],
     mode: 'payment',
-    shipping_address_collection: { allowed_countries: ['DE', 'US'] },
+    shipping_address_collection: { allowed_countries: ['FR'] },
+    phone_number_collection: {
+      enabled: true,
+    },
     metadata: {
       userId: user.id,
       orderId: order.id,
     },
     line_items: [{ price: product.default_price as string, quantity: 1 }],
+    billing_address_collection: 'required',
+    locale: 'fr',
   })
 
   return { url: stripeSession.url }

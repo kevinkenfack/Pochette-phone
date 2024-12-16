@@ -137,13 +137,13 @@ const Page = async () => {
             <div className='min-w-[800px] bg-white dark:bg-gray-800 rounded-xl border'>
               <Table>
                 <TableHeader>
-                  <TableRow className="bg-gray-50 dark:bg-gray-900/50">
-                    <TableHead className="font-semibold">Client</TableHead>
-                    <TableHead className="font-semibold">Adresse</TableHead>
-                    <TableHead className="font-semibold">Produit</TableHead>
-                    <TableHead className="font-semibold">Statut</TableHead>
-                    <TableHead className="font-semibold">Montant</TableHead>
-                    <TableHead className="font-semibold">Actions</TableHead>
+                  <TableRow className="bg-green-50 hover:bg-green-50/80 dark:bg-green-900/20 dark:hover:bg-green-900/30">
+                    <TableHead className="font-semibold text-green-800 dark:text-green-300">Client</TableHead>
+                    <TableHead className="font-semibold text-green-800 dark:text-green-300">Adresse</TableHead>
+                    <TableHead className="font-semibold text-green-800 dark:text-green-300">Produit</TableHead>
+                    <TableHead className="font-semibold text-green-800 dark:text-green-300">Statut</TableHead>
+                    <TableHead className="font-semibold text-green-800 dark:text-green-300">Montant</TableHead>
+                    <TableHead className="font-semibold text-green-800 dark:text-green-300">Actions</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>

@@ -50,6 +50,7 @@ export async function POST(req: Request) {
 
       const billingAddress = session.customer_details!.address
       const shippingAddress = session.shipping_details!.address
+      const phoneNumber = session.customer_details?.phone || session.shipping_details?.phone
 
       const updatedOrder = await db.order.update({
         where: {
@@ -65,6 +66,7 @@ export async function POST(req: Request) {
               postalCode: shippingAddress!.postal_code!,
               street: shippingAddress!.line1!,
               state: shippingAddress!.state,
+              phoneNumber: phoneNumber,
             },
           },
           billingAddress: {
