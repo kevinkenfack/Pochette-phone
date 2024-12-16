@@ -69,13 +69,13 @@ model Order {
   configurationId String
   amount          Float
   isPaid          Boolean       @default(false)
-  status          OrderStatus    @default(awaiting_shipment)
+  status          OrderStatus   @default(awaiting_shipment)
+  stripeSessionId String?
   
   // Relations
   user            User          @relation(fields: [userId], references: [id])
   configuration   Configuration @relation(fields: [configurationId], references: [id])
   
-  // Correction des relations avec les adresses
   shippingAddressId String?
   shippingAddress   ShippingAddress? @relation(fields: [shippingAddressId], references: [id])
   
@@ -84,6 +84,8 @@ model Order {
   
   createdAt       DateTime      @default(now())
   updated         DateTime      @updatedAt
+
+  @@index([stripeSessionId])
 }
 
 model ShippingAddress {
@@ -95,6 +97,7 @@ model ShippingAddress {
   country     String
   state       String?
   phoneNumber String?
+  email       String?
   orders      Order[]
 }
 
