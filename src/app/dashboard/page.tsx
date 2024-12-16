@@ -39,7 +39,12 @@ const Page = async () => {
       isPaid: true,
     },
     include: {
-      user: true,
+      user: {
+        select: {
+          email: true,
+          name: true,
+        }
+      },
       configuration: true,
       shippingAddress: true,
       billingAddress: true,
@@ -150,7 +155,12 @@ const Page = async () => {
                       {/* Colonne Client */}
                       <TableCell className="min-w-[200px]">
                         <div className="space-y-1">
-                          <div className="font-medium truncate">{order.user.email}</div>
+                          {order.user.name && (
+                            <div className="font-medium text-gray-900 dark:text-white">
+                              {order.user.name}
+                            </div>
+                          )}
+                          <div className="text-sm text-gray-500">{order.user.email}</div>
                           <div className="text-sm text-muted-foreground flex items-center gap-2">
                             <span className="font-mono">#{order.id.slice(-6)}</span>
                             <span className="text-xs text-gray-400">

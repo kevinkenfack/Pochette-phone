@@ -132,6 +132,15 @@ const OrderDetailsModal = ({ order }: OrderDetailsModalProps) => {
                     <div>
                       <h3 className="font-medium text-gray-900 dark:text-white">Client</h3>
                       <div className="mt-1 space-y-1 text-sm text-gray-500">
+                        {order.user.name ? (
+                          <p className="font-medium text-gray-900 dark:text-white">
+                            {order.user.name}
+                          </p>
+                        ) : (
+                          <p className="font-medium text-gray-900 dark:text-white">
+                            {order.shippingAddress?.name || 'Client'}
+                          </p>
+                        )}
                         <p>{order.user.email}</p>
                         {order.shippingAddress?.phoneNumber && (
                           <p className="flex items-center gap-2">
