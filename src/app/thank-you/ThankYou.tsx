@@ -157,18 +157,16 @@ const ThankYou = () => {
           </div>
         </div>
 
-        {/* CTA */}
-        <div className='mt-10 flex justify-center'>
-          <CTAButton href='/' variant='secondary'>
-            Retour à l'accueil
-          </CTAButton>
-        </div>
-
-        <div className="mt-4 text-center">
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+        {/* CTA - uniquement le bouton de suivi */}
+        <div className="mt-8 text-center">
+          <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
             Vous pourrez suivre votre commande à tout moment avec votre numéro de commande
           </p>
-          <CTAButton href={`/track?orderId=${orderId}`} variant="secondary">
+          <CTAButton 
+            href={`/track?orderId=${orderId}`} 
+            variant="primary"
+            size="lg"
+          >
             Suivre ma commande
           </CTAButton>
         </div>

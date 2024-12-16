@@ -2,27 +2,42 @@
 
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { useState } from 'react'
 import { Search } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { findOrderById } from '../dashboard/actions'
 import OrderStatus from './OrderStatus'
+import { useSearchParams } from 'next/navigation'
 
 export default function OrderTracker() {
   const [orderId, setOrderId] = useState('')
   const [order, setOrder] = useState<any>(null)
   const [error, setError] = useState('')
   const [isSearching, setIsSearching] = useState(false)
+  
+  // Récupérer l'orderId depuis l'URL
+  const searchParams = useSearchParams()
+  const orderIdFromUrl = searchParams.get('orderId')
 
-  const handleSearch = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!orderId.trim()) return
+  // Effectuer la recherche automatiquement si orderId est dans l'URL
+  useEffect(() => {
+    if (orderIdFromUrl) {
+      setOrderId(orderIdFromUrl)
+      handleSearch(undefined, orderIdFromUrl)
+    }
+  }, [orderIdFromUrl])
+
+  const handleSearch = async (e?: React.FormEvent, searchOrderId?: string) => {
+    if (e) e.preventDefault()
+    
+    const idToSearch = searchOrderId || orderId
+    if (!idToSearch.trim()) return
 
     setIsSearching(true)
     setError('')
     setOrder(null)
 
     try {
-      const result = await findOrderById(orderId)
+      const result = await findOrderById(idToSearch)
       if (result) {
         setOrder(result)
       } else {

@@ -8,11 +8,16 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { cn } from '@/lib/utils'
-import { OrderStatus } from '@prisma/client'
 import { useMutation } from '@tanstack/react-query'
 import { Check, ChevronsUpDown } from 'lucide-react'
 import { changeOrderStatus } from './actions'
 import { useRouter } from 'next/navigation'
+
+const OrderStatus = {
+  awaiting_shipment: 'awaiting_shipment',
+  fulfilled: 'fulfilled',
+  shipped: 'shipped',
+} as const
 
 const LABEL_MAP: Record<keyof typeof OrderStatus, string> = {
   awaiting_shipment: 'En attente',
@@ -25,7 +30,7 @@ const StatusDropdown = ({
   orderStatus,
 }: {
   id: string
-  orderStatus: OrderStatus
+  orderStatus: keyof typeof OrderStatus
 }) => {
   const router = useRouter()
 
@@ -55,7 +60,7 @@ const StatusDropdown = ({
                 'bg-green-50 dark:bg-green-900/20': orderStatus === status,
               }
             )}
-            onClick={() => mutate({ id, newStatus: status as OrderStatus })}>
+            onClick={() => mutate({ id, newStatus: status as keyof typeof OrderStatus })}>
             <Check
               className={cn(
                 'h-4 w-4 text-green-600 dark:text-green-400',
@@ -63,7 +68,7 @@ const StatusDropdown = ({
               )}
             />
             <span className='text-sm font-medium text-gray-900 dark:text-gray-100'>
-              {LABEL_MAP[status as OrderStatus]}
+              {LABEL_MAP[status as keyof typeof OrderStatus]}
             </span>
           </DropdownMenuItem>
         ))}
