@@ -14,9 +14,9 @@ import { changeOrderStatus } from './actions'
 import { useRouter } from 'next/navigation'
 
 const OrderStatus = {
-  awaiting_shipment: 'awaiting_shipment',
-  fulfilled: 'fulfilled',
-  shipped: 'shipped',
+  awaiting_shipment: 'En attente',
+  fulfilled: 'Terminé',
+  shipped: 'Expédié',
 } as const
 
 const LABEL_MAP: Record<keyof typeof OrderStatus, string> = {

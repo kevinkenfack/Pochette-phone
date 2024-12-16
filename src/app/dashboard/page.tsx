@@ -132,47 +132,68 @@ const Page = async () => {
             <div className='min-w-[800px] bg-white dark:bg-gray-800 rounded-xl border'>
               <Table>
                 <TableHeader>
-                  <TableRow>
-                    <TableHead>Client</TableHead>
-                    <TableHead>Adresse</TableHead>
-                    <TableHead>Produit</TableHead>
-                    <TableHead>Statut</TableHead>
-                    <TableHead>Montant</TableHead>
-                    <TableHead>Actions</TableHead>
+                  <TableRow className="bg-gray-50 dark:bg-gray-900/50">
+                    <TableHead className="font-semibold">Client</TableHead>
+                    <TableHead className="font-semibold">Adresse</TableHead>
+                    <TableHead className="font-semibold">Produit</TableHead>
+                    <TableHead className="font-semibold">Statut</TableHead>
+                    <TableHead className="font-semibold">Montant</TableHead>
+                    <TableHead className="font-semibold">Actions</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {orders.map((order) => (
-                    <TableRow key={order.id} className="group hover:bg-gray-50 dark:hover:bg-gray-800/50">
-                      <TableCell className="max-w-[200px]">
-                        <div className="font-medium truncate">{order.user.email}</div>
-                        <div className="text-sm text-muted-foreground">
-                          #{order.id.slice(-6)}
-                        </div>
-                      </TableCell>
-                      
-                      <TableCell className="hidden md:table-cell">
-                        {order.shippingAddress?.name}
-                      </TableCell>
-                      
-                      <TableCell>
-                        <div className="text-sm">
-                          <div>iPhone {order.configuration.model}</div>
-                          <div className="text-muted-foreground md:hidden">
-                            {order.shippingAddress?.city}
+                    <TableRow 
+                      key={order.id} 
+                      className="group hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
+                    >
+                      {/* Colonne Client */}
+                      <TableCell className="min-w-[200px]">
+                        <div className="space-y-1">
+                          <div className="font-medium truncate">{order.user.email}</div>
+                          <div className="text-sm text-muted-foreground flex items-center gap-2">
+                            <span className="font-mono">#{order.id.slice(-6)}</span>
+                            <span className="text-xs text-gray-400">
+                              {new Date(order.createdAt).toLocaleDateString()}
+                            </span>
                           </div>
                         </div>
                       </TableCell>
                       
-                      <TableCell>
+                      {/* Colonne Adresse */}
+                      <TableCell className="min-w-[200px]">
+                        <div className="space-y-1">
+                          <div className="font-medium">{order.shippingAddress?.name}</div>
+                          <div className="text-sm text-muted-foreground">
+                            {order.shippingAddress?.city}, {order.shippingAddress?.country}
+                          </div>
+                        </div>
+                      </TableCell>
+                      
+                      {/* Colonne Produit */}
+                      <TableCell className="min-w-[180px]">
+                        <div className="space-y-1">
+                          <div className="font-medium">iPhone {order.configuration.model}</div>
+                          <div className="text-sm text-muted-foreground">
+                            {order.configuration.material} - {order.configuration.color}
+                          </div>
+                        </div>
+                      </TableCell>
+                      
+                      {/* Colonne Statut */}
+                      <TableCell className="min-w-[150px]">
                         <StatusDropdown id={order.id} orderStatus={order.status} />
                       </TableCell>
                       
-                      <TableCell className="font-medium">
-                        {formatPrice(order.amount)}
+                      {/* Colonne Montant */}
+                      <TableCell className="min-w-[100px]">
+                        <div className="font-medium text-green-600 dark:text-green-400">
+                          {formatPrice(order.amount)}
+                        </div>
                       </TableCell>
                       
-                      <TableCell>
+                      {/* Colonne Actions */}
+                      <TableCell className="w-[100px]">
                         <OrderDetailsModal order={order} />
                       </TableCell>
                     </TableRow>

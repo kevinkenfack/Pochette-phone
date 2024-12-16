@@ -47,11 +47,21 @@ const OrderDetailsModal = ({ order }: OrderDetailsModalProps) => {
   return (
     <>
       <div className="flex gap-2">
-        <Button variant="outline" size="sm" onClick={() => setIsDetailsOpen(true)}>
+        <Button 
+          variant="outline" 
+          size="sm" 
+          onClick={() => setIsDetailsOpen(true)}
+          className="whitespace-nowrap"
+        >
           <Info className="w-4 h-4 mr-2" />
           Détails
         </Button>
-        <Button variant="outline" size="sm" onClick={() => setIsPreviewOpen(true)}>
+        <Button 
+          variant="outline" 
+          size="sm" 
+          onClick={() => setIsPreviewOpen(true)}
+          className="whitespace-nowrap"
+        >
           <Eye className="w-4 h-4 mr-2" />
           Aperçu
         </Button>
@@ -59,7 +69,7 @@ const OrderDetailsModal = ({ order }: OrderDetailsModalProps) => {
 
       {/* Modal des détails */}
       <Dialog open={isDetailsOpen} onOpenChange={setIsDetailsOpen}>
-        <DialogContent className="max-w-2xl w-[95%] p-6 my-8">
+        <DialogContent className="max-w-2xl w-[95%] p-4 sm:p-6 my-4 sm:my-8">
           <DialogHeader>
             <DialogTitle className="text-xl flex items-center gap-2">
               <Info className="w-5 h-5" />
@@ -111,7 +121,7 @@ const OrderDetailsModal = ({ order }: OrderDetailsModalProps) => {
 
       {/* Modal de l'aperçu */}
       <Dialog open={isPreviewOpen} onOpenChange={setIsPreviewOpen}>
-        <DialogContent className="max-w-3xl w-[95%] p-4 sm:p-6 my-4 sm:my-8 max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-3xl w-[95%] p-3 sm:p-6 my-4 sm:my-8 max-h-[90vh] overflow-y-auto">
           <DialogHeader className="sticky top-0 bg-background z-50 pb-4">
             <DialogTitle className="text-xl flex items-center gap-2">
               <Eye className="w-5 h-5" />
@@ -129,6 +139,7 @@ const OrderDetailsModal = ({ order }: OrderDetailsModalProps) => {
                     alt="Design original"
                     fill
                     className="rounded-lg object-contain"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
                 <Button 
@@ -144,7 +155,7 @@ const OrderDetailsModal = ({ order }: OrderDetailsModalProps) => {
 
             {/* Aperçu de la coque */}
             <div className="order-1 md:order-2">
-              <div className="w-full max-w-[250px] sm:max-w-[280px] mx-auto">
+              <div className="w-full max-w-[220px] sm:max-w-[280px] mx-auto">
                 <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-3 sm:p-4">
                   <PhonePreview
                     croppedImageUrl={order.configuration.croppedImageUrl!}
