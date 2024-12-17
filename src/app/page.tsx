@@ -314,7 +314,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <CTAButton href="/configure/upload" size="lg">
-                Créer ma coque maintenant
+                Créer ma coque
               </CTAButton>
               <CTAButton href="#gallery" variant="secondary" size="lg">
                 Voir plus d'exemples
