@@ -52,7 +52,7 @@ export default function ContactForm() {
             </div>
             <span>Message envoyé !</span>
           </div>
-        ),
+        ) as React.ReactElement,
         description: 'Nous vous répondrons dans les plus brefs délais.',
         className: "border-green-100 bg-white dark:bg-gray-950 dark:border-green-900/50",
         title_className: "text-green-900 dark:text-green-100 font-medium",
