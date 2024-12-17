@@ -38,7 +38,7 @@ const Navbar = async () => {
                   <DropdownMenuItem asChild>
                     <Link 
                       href='/track' 
-                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors'
                     >
                       Suivre ma commande
                     </Link>
@@ -48,7 +48,7 @@ const Navbar = async () => {
                     <DropdownMenuItem asChild>
                       <Link 
                         href='/dashboard' 
-                        className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                        className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors'
                       >
                         Dashboard ✨
                       </Link>
@@ -57,7 +57,7 @@ const Navbar = async () => {
                   <DropdownMenuItem asChild>
                     <Link 
                       href='/configure/upload'
-                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors'
                     >
                       Créer ma coque
                     </Link>
@@ -65,7 +65,7 @@ const Navbar = async () => {
                   <DropdownMenuItem asChild>
                     <Link 
                       href='/api/auth/logout'
-                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors'
                     >
                       Déconnexion
                     </Link>
@@ -76,7 +76,7 @@ const Navbar = async () => {
                   <DropdownMenuItem asChild>
                     <Link 
                       href='/track' 
-                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors'
                     >
                       Suivre ma commande
                     </Link>
@@ -84,7 +84,7 @@ const Navbar = async () => {
                   <DropdownMenuItem asChild>
                     <Link 
                       href='/configure/upload'
-                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors'
                     >
                       Créer ma coque
                     </Link>
@@ -92,7 +92,7 @@ const Navbar = async () => {
                   <DropdownMenuItem asChild>
                     <Link 
                       href='/api/auth/register'
-                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors'
                     >
                       Inscription
                     </Link>
@@ -100,7 +100,7 @@ const Navbar = async () => {
                   <DropdownMenuItem asChild>
                     <Link 
                       href='/api/auth/login'
-                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                      className='flex items-center px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors'
                     >
                       Connexion
                     </Link>
@@ -117,7 +117,7 @@ const Navbar = async () => {
               className={buttonVariants({
                 variant: 'ghost',
                 size: 'sm',
-                className: 'text-gray-700 dark:text-gray-300',
+                className: 'text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20',
               })}>
               Suivre ma commande
             </Link>
@@ -129,7 +129,7 @@ const Navbar = async () => {
                   className={buttonVariants({
                     variant: 'ghost',
                     size: 'sm',
-                    className: 'text-gray-700 dark:text-gray-300',
+                    className: 'text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20',
                   })}>
                   Déconnexion
                 </Link>
@@ -140,7 +140,7 @@ const Navbar = async () => {
                     className={buttonVariants({
                       variant: 'ghost',
                       size: 'sm',
-                      className: 'text-gray-700 dark:text-gray-300',
+                      className: 'text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20',
                     })}>
                     Dashboard ✨
                   </Link>
@@ -163,7 +163,7 @@ const Navbar = async () => {
                   className={buttonVariants({
                     variant: 'ghost',
                     size: 'sm',
-                    className: 'text-gray-700 dark:text-gray-300',
+                    className: 'text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20',
                   })}>
                   Inscription
                 </Link>
@@ -173,7 +173,7 @@ const Navbar = async () => {
                   className={buttonVariants({
                     variant: 'ghost',
                     size: 'sm',
-                    className: 'text-gray-700 dark:text-gray-300',
+                    className: 'text-gray-700 dark:text-gray-300 hover:bg-green-50 dark:hover:bg-green-900/20',
                   })}>
                   Connexion
                 </Link>

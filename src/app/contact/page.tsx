@@ -1,24 +1,26 @@
-import OrderTracker from './OrderTracker'
+import ContactForm from './ContactForm'
 
-export default function Page() {
+export default function ContactPage() {
   return (
     <div className="container max-w-5xl py-16 sm:py-24">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl mb-4">
-          Suivez votre{' '}
+          Contactez{' '}
           <span className="relative">
             <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-emerald-400">
-              commande
+              nous
             </span>
             <span className="absolute inset-x-0 bottom-0 h-3 bg-green-200/40 dark:bg-green-800/40 -rotate-1" />
           </span>
         </h1>
         <p className="text-gray-600 dark:text-gray-400">
-          Entrez votre numéro de commande pour suivre son statut
+          Une question ? N'hésitez pas à nous écrire !
         </p>
       </div>
 
-      <OrderTracker />
+      <div className="max-w-xl mx-auto">
+        <ContactForm />
+      </div>
     </div>
   )
 } 
