@@ -1,4 +1,10 @@
+import { constructMetadata } from '@/lib/utils'
 import MaxWidthWrapper from '@/components/MaxWidthWrapper'
+
+export const metadata = constructMetadata({
+  title: 'Politique de confidentialité',
+  description: 'Découvrez comment nous protégeons vos données personnelles.'
+})
 
 export default function PrivacyPage() {
   return (

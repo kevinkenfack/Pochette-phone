@@ -1,4 +1,10 @@
+import { constructMetadata } from '@/lib/utils'
 import MaxWidthWrapper from '@/components/MaxWidthWrapper'
+
+export const metadata = constructMetadata({
+  title: 'Conditions d\'utilisation',
+  description: 'Consultez nos conditions générales d\'utilisation.'
+})
 
 export default function TermsPage() {
   return (

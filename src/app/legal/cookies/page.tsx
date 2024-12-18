@@ -1,4 +1,10 @@
+import { constructMetadata } from '@/lib/utils'
 import MaxWidthWrapper from '@/components/MaxWidthWrapper'
+
+export const metadata = constructMetadata({
+  title: 'Politique des cookies',
+  description: 'Informations sur l\'utilisation des cookies sur notre site.'
+})
 
 export default function CookiesPage() {
   return (

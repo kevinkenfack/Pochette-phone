@@ -1,4 +1,10 @@
 import ContactForm from './ContactForm'
+import { constructMetadata } from '@/lib/utils'
+
+export const metadata = constructMetadata({
+  title: 'Contact',
+  description: 'Contactez-nous pour toute question ou suggestion.'
+})
 
 export default function ContactPage() {
   return (

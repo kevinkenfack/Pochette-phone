@@ -55,7 +55,7 @@ export default function HomePage() {
                 <CTAButton href="/configure/upload" size="lg">
                   Creer ma coque
                 </CTAButton>
-                <CTAButton href="#gallery" variant="secondary" size="lg">
+                <CTAButton href="/gallery" variant="secondary" size="lg">
                   Voir les créations
                 </CTAButton>
               </div>
@@ -316,7 +316,7 @@ export default function HomePage() {
               <CTAButton href="/configure/upload" size="lg">
                 Créer ma coque
               </CTAButton>
-              <CTAButton href="#gallery" variant="secondary" size="lg">
+              <CTAButton href="/gallery" variant="secondary" size="lg">
                 Voir plus d'exemples
               </CTAButton>
             </div>

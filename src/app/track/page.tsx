@@ -1,4 +1,10 @@
 import OrderTracker from './OrderTracker'
+import { constructMetadata } from '@/lib/utils'
+
+export const metadata = constructMetadata({
+  title: 'Suivi de commande',
+  description: 'Suivez l\'état de votre commande en temps réel.'
+})
 
 export default function Page() {
   return (
