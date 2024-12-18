@@ -14,6 +14,7 @@ import {
 import Link from 'next/link'
 import CTAButton from '@/components/CTAButton'
 import { BeforeAfter } from '@/components/BeforeAfter'
+import { FAQ } from '@/components/FAQ'
 
 export default function HomePage() {
   return (
@@ -289,6 +290,9 @@ export default function HomePage() {
           <BeforeAfter imageSrc="/testimonials/1.jpg" />
         </MaxWidthWrapper>
       </section>
+
+      {/* Section FAQ */}
+      <FAQ />
 
       {/* Section CTA finale */}
       <section className="py-24 relative overflow-hidden">
