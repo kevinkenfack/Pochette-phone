@@ -30,6 +30,7 @@ To get started with this project, run
 
 and copy the .env.example variables into a separate .env file, fill them out & and that's all you need to get started!
 
+```env
 # Base
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 NEXT_PUBLIC_KINDE_ISSUER_URL=your-kinde-issuer-url
@@ -52,11 +53,11 @@ UPLOADTHING_APP_ID=your-uploadthing-app-id
 
 # Resend (email service)
 RESEND_API_KEY=your-resend-api-key
-
+```
 
 ## Acknowledgements
 
-- [Kinde](https://link.joshtriedcoding.com/kinde) for making this project possible
+- [Kinde](https://kinde.com) for making this project possible
 
 ## License
 
