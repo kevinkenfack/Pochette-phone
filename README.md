@@ -30,6 +30,29 @@ To get started with this project, run
 
 and copy the .env.example variables into a separate .env file, fill them out & and that's all you need to get started!
 
+# Base
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_KINDE_ISSUER_URL=your-kinde-issuer-url
+NEXT_PUBLIC_KINDE_CLIENT_ID=your-kinde-client-id
+KINDE_CLIENT_SECRET=your-kinde-client-secret
+NEXT_PUBLIC_KINDE_POST_CALLBACK_URL=http://localhost:3000/api/auth/kinde-callback
+NEXT_PUBLIC_KINDE_POST_LOGOUT_REDIRECT_URL=http://localhost:3000
+
+# Database
+DATABASE_URL=your-postgres-url
+
+# Stripe
+STRIPE_SECRET_KEY=your-stripe-secret-key
+STRIPE_WEBHOOK_SECRET=your-stripe-webhook-secret
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your-stripe-publishable-key
+
+# UploadThing
+UPLOADTHING_SECRET=your-uploadthing-secret
+UPLOADTHING_APP_ID=your-uploadthing-app-id
+
+# Resend (email service)
+RESEND_API_KEY=your-resend-api-key
+
 
 ## Acknowledgements
 
